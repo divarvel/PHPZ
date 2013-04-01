@@ -4,6 +4,9 @@ abstract class Monad implements Typeclass {
     public function getTypeclassName() {
         return 'Monad';
     }
+    public function getMethods() {
+        return array("pure", "bind");
+    }
     public abstract function pure($value);
 
     public abstract function bind($ma, $f);
@@ -23,9 +26,10 @@ class ArrayMonad extends Monad {
         return array($value);
     }
 
-    public function bind($ma, $f) {
+    public function bind($f, $ma) {
         $mb = array();
-        $fma = __t($ma, 'Functor')->map($f, $ma);
+        $fma = __t($ma)->map($f);
+        $fma = $fma();
 
         foreach($fma as $v) {
             foreach($v as $vv) {
@@ -39,7 +43,7 @@ class ArrayMonad extends Monad {
 
 TypeclassRepo::registerInstance(new ArrayMonad());
 
-class MaybeMonad extends Functor {
+class MaybeMonad extends Monad {
     public function getType() {
         return 'Maybe';
     }
@@ -48,10 +52,11 @@ class MaybeMonad extends Functor {
         return new Maybe($value);
     }
 
-    public function bind($ma, $f) {
-        $fma = __t($ma, 'Functor')->map($f, $ma);
+    public function bind($f, $ma) {
+        $fma = __t($ma)->map($f);
+        $fma = $fma();
 
-        return (!$fma->isEmpty) ? $fma.get() : $fma; 
+        return (!$fma->isEmpty()) ? $fma->get() : $fma; 
     }
 }
 

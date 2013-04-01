@@ -4,6 +4,9 @@ abstract class Functor implements Typeclass {
     public function getTypeclassName() {
         return 'Functor';
     }
+    public function getMethods() {
+        return array("map");
+    }
     public abstract function map($function, $functor);
 }
 
