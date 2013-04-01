@@ -6,9 +6,17 @@ include "src/Monoid.php";
 include "src/Functor.php";
 
 
-$a = new Maybe("test");
+$ma = new Maybe("test");
 
 
-$b = __t($a, 'Functor')->map(function($x) { return strlen($x); })->map(function($x) { return $x + 5 ; });
+$mb = __t($ma, 'Functor')->map(function($x) { return strlen($x); })
+                       ->map(function($x) { return $x + 5 ; });
 
-print $b();
+print $mb();
+
+$as = array("foo", "bar", "qix");
+
+$bs = __t($as, 'Functor')->map(function($x) { return strlen($x); })
+                         ->map(function($x) { return $x + 5 ; });
+
+print_r($bs());
