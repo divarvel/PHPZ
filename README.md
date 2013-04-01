@@ -27,3 +27,7 @@ A simple wrapper is provided:
 
     $ds = __t($as)->map(function($x) { return strlen($x); })
                   ->bind(function($x) { return array($x - 5, $x, $x + 5) ; });
+
+Try it for yourself !
+
+    $ php -f examples/phpz.php
