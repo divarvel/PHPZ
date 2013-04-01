@@ -60,7 +60,7 @@ class MaybeMonoid extends Monoid {
         } else if(!$a2->isEmpty()) {
             return $a2;
         } else {
-            return new Monoid(null);
+            return new Maybe(null);
         }
     }
     public function mzero() {
