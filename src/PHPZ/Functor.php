@@ -1,4 +1,5 @@
 <?php
+namespace PHPZ;
 
 abstract class Functor implements Typeclass {
     public function getTypeclassName() {

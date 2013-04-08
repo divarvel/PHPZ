@@ -1,4 +1,5 @@
 <?php
+namespace PHPZ;
 
 class TypeclassRepo {
     private static $instances = array();
