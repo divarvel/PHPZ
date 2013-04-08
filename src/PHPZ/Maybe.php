@@ -1,4 +1,5 @@
 <?php
+namespace PHPZ;
 
 class Maybe {
     private $content = null;
@@ -19,7 +20,7 @@ class Maybe {
         if($this->isEmpty()) {
             return 'Nothing';
         } else {
-            return 'Just('.$this->content.')';
+            return sprintf("Just(%s)", $this->content);
         }
 
     }

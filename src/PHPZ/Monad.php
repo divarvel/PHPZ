@@ -1,4 +1,5 @@
 <?php
+namespace PHPZ;
 
 abstract class Monad implements Typeclass {
     public function getTypeclassName() {

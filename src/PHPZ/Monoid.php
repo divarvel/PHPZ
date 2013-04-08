@@ -1,4 +1,5 @@
 <?php
+namespace PHPZ;
 
 abstract class Monoid implements Typeclass {
     public function getTypeclassName() {
