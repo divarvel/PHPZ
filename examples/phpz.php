@@ -1,4 +1,11 @@
 <?php
+set_error_handler(function($errno, $errstr, $errfile, $errline) {
+    if (!(error_reporting() & $errno)) {
+        return;
+    }
+
+    throw new \Exception(sprintf("ERROR %s at file '%s' (line %d).", $errstr, $errfile, $errline), $errno);
+});
 
 include dirname(__DIR__)."/vendor/autoload.php";
 
