@@ -24,7 +24,7 @@ class TypeClassRepo
         $type = gettype($type) !== "object" ? gettype($type) : get_class($type);
 
         if (!isset(self::$instances[$typeClass]['instances'][$type])) {
-            throw new \Exception(sprintf("Repo does not know instance of '%s' with type '%s'.\n", $typeClass, $type));
+            throw new \Exception(sprintf("Repo does not know instance of '%s' with type '%s'.\nI know {%s}.\n", $typeClass, $type, print_r(self::$instances, true)));
         }
 
         return self::$instances[$typeClass]["instances"][$type];

@@ -15,6 +15,7 @@ class PHPZ
     static public function init()
     {
         TypeClassRepo::registerInstance(new ArrayFunctor());
+        TypeClassRepo::registerInstance(new MaybeFunctor());
         TypeclassRepo::registerInstance(new ArrayMonad());
         TypeclassRepo::registerInstance(new MaybeMonad());
         TypeclassRepo::registerInstance(new StringMonoid());

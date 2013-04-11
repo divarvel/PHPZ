@@ -7,7 +7,7 @@ abstract class BaseMonoid implements TypeClassInterface
 {
     public function getTypeclassName()
     {
-        return 'PHPZ\Monoid\BaseMonoid';
+        return 'Monoid';
     }
 
     public function getMethods()
