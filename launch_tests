@@ -1,0 +1,6 @@
+#!/bin/bash
+php=$(which php);
+
+for test_file in tests/unit/*.Test.php; do
+    $php $test_file;
+done;
