@@ -1,14 +1,25 @@
 <?php
+set_error_handler(function($errno, $errstr, $errfile, $errline) {
+    if (!(error_reporting() & $errno)) {
+        return;
+    }
 
-include "src/TypeClass.php";
-include "src/Maybe.php";
-include "src/Monoid.php";
-include "src/Functor.php";
-include "src/Monad.php";
+    throw new \Exception(sprintf("ERROR %s at file '%s' (line %d).", $errstr, $errfile, $errline), $errno);
+});
 
+include dirname(__DIR__)."/vendor/autoload.php";
+
+use \PHPZ\Maybe;
+use \PHPZ\TypeClass\TypeClassWrapper;
+
+\PHPZ\PHPZ::init();
+
+function __t($ma)
+{
+    return new TypeClassWrapper($ma);
+}
 
 $ma = new Maybe("test");
-
 
 $mb = __t($ma)->map(function($x) { return strlen($x); })
               ->map(function($x) { return $x + 5 ; });
