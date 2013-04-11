@@ -15,8 +15,8 @@ class MaybeMonad extends BaseMonad
         return new Maybe($value);
     }
 
-    public function bind($f, BaseMonad $ma) {
-        $fma = TypeClassWrapper($ma)->map($f);
+    public function bind($f, $ma) {
+        $fma = TypeClassWrapper::wrap($ma)->map($f);
         $fma = $fma();
 
         return (!$fma->isEmpty()) ? $fma->get() : $fma; 

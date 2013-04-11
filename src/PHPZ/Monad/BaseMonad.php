@@ -17,7 +17,7 @@ abstract class BaseMonad implements TypeClassInterface
 
     public abstract function pure($value);
 
-    public abstract function bind($f, BaseMonad $ma);
+    public abstract function bind($f, $ma);
 
     public function join(BaseMonad $ma, BaseMonad $mb)
     {

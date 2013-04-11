@@ -26,7 +26,6 @@ $mb = __t($ma)->map(function($x) { return strlen($x); })
 
 print $mb();
 print "\n";
-exit;
 
 $as = array("foo", "foobar", "foobarqix");
 

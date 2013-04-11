@@ -1,7 +1,7 @@
 <?php
 namespace PHPZ\Monad;
 
-use \PHPZ\TypeClassWrapper;
+use \PHPZ\TypeClass\TypeClassWrapper;
 
 class ArrayMonad extends BaseMonad
 {
@@ -15,7 +15,7 @@ class ArrayMonad extends BaseMonad
         return array($value);
     }
 
-    public function bind($f, BaseMonad $ma)
+    public function bind($f, $ma)
     {
         $mb = array();
         $fma = TypeClassWrapper::wrap($ma)->map($f);
