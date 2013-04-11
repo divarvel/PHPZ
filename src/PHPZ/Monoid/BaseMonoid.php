@@ -1,13 +1,13 @@
 <?php
 namespace PHPZ\Monoid;
 
-use \PHPZ\Typeclass\TypeClassInterface;
+use \PHPZ\TypeClass\TypeClassInterface;
 
 abstract class BaseMonoid implements TypeClassInterface
 {
     public function getTypeclassName()
     {
-        return 'Monoid';
+        return 'PHPZ\Monoid\BaseMonoid';
     }
 
     public function getMethods()

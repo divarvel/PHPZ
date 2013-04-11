@@ -1,14 +1,16 @@
 <?php
 namespace PHPZ\Functor;
 
+use PHPZ\Maybe;
+
 class MaybeFunctor extends BaseFunctor
 {
     public function getType()
     {
-        return 'Maybe';
+        return 'PHPZ\Maybe';
     }
 
-    public function map($callable, \PHPZ\Maybe $maybe)
+    public function map($callable, Maybe $maybe)
     {
         return new Maybe(!$maybe->isEmpty() ? call_user_func($callable, array($maybe->get())) : null);
     }

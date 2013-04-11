@@ -1,11 +1,14 @@
 <?php
 namespace PHPZ\Monoid;
 
+use \PHPZ\Maybe;
+use \PHPZ\TypeClass\TypeclassRepo;
+
 class MaybeMonoid extends BaseMonoid 
 {
     public function getType() 
     {
-        return 'Maybe';
+        return 'PHPZ\Maybe';
     }
 
     public function mappend($a2, $a1) 
