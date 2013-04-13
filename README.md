@@ -1,6 +1,14 @@
 PHPz
 ====
 
+How to set up
+-------------
+
+In the .composer.json directory, just invoke `composer.phar install` and you'll get the `vendor/autoloader.php` you need.
+
+The what
+--------
+
 PHPz brings the power power and expressiveness of functional programming to
 the PHP masses. It is heavily inspired from scalaz, which also brings
 functional constructs to an otherwise imperative language.

@@ -1,22 +1,32 @@
 <?php
 namespace PHPZ;
 
-class Maybe {
+class Maybe
+{
     private $content = null;
-    public function __construct($c = null) {
+
+    public function __construct($c = null)
+    {
         $this->content = $c;
     }
-    public function get() {
+
+    public function get()
+    {
         return $this->content;
     }
-    public function getOrElse($default) {
+
+    public function getOrElse($default)
+    {
         return $this->content === null ? $default : $this->content;
     }
-    public function isEmpty() {
+
+    public function isEmpty()
+    {
         return $this->content === null;
     }
 
-    public function __toString() {
+    public function __toString()
+    {
         if($this->isEmpty()) {
             return 'Nothing';
         } else {
@@ -25,4 +35,3 @@ class Maybe {
 
     }
 }
-
