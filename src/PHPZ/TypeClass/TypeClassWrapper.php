@@ -25,7 +25,7 @@ class TypeClassWrapper
 
     public function __toString()
     {
-        return $this->value->_toString();
+        return $this->value->__toString();
     }
 
     public function __invoke()
