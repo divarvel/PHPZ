@@ -7,7 +7,7 @@ set_error_handler(function($errno, $errstr, $errfile, $errline) {
     throw new \Exception(sprintf("ERROR %s at file '%s' (line %d).", $errstr, $errfile, $errline), $errno);
 });
 
-include dirname(__DIR__)."/vendor/autoload.php";
+include dirname(__DIR__)."/tests/autoload.php";
 
 use \PHPZ\Maybe;
 use \PHPZ\TypeClass\TypeClassWrapper;
